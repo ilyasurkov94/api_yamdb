@@ -1,0 +1,1198 @@
+============================= test session starts =============================
+platform win32 -- Python 3.9.1, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- d:\gitdev\api_yamdb\venv\scripts\python.exe
+django: settings: api_yamdb.settings (from ini)
+rootdir: D:\GitDev\api_yamdb, configfile: pytest.ini, testpaths: tests/
+plugins: django-4.4.0, pythonpath-0.7.3
+collecting ... collected 53 items
+
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_nodata_signup PASSED [  1%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_invalid_data_signup PASSED [  3%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_user_signup PASSED [  5%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user PASSED [  7%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_obtain_jwt_token_invalid_data PASSED [  9%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted PASSED [ 11%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_same_email_restricted PASSED [ 13%]
+tests/test_01_users.py::Test01UserAPI::test_01_users_not_authenticated PASSED [ 15%]
+tests/test_01_users.py::Test01UserAPI::test_02_users_username_not_authenticated PASSED [ 16%]
+tests/test_01_users.py::Test01UserAPI::test_03_users_me_not_authenticated PASSED [ 18%]
+tests/test_01_users.py::Test01UserAPI::test_04_users_get_admin PASSED    [ 20%]
+tests/test_01_users.py::Test01UserAPI::test_04_02_users_get_search PASSED [ 22%]
+tests/test_01_users.py::Test01UserAPI::test_04_01_users_get_admin_only PASSED [ 24%]
+tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin PASSED [ 26%]
+tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser PASSED [ 28%]
+tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin PASSED [ 30%]
+tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_not_admin PASSED [ 32%]
+tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin PASSED [ 33%]
+tests/test_01_users.py::Test01UserAPI::test_07_02_users_username_patch_moderator PASSED [ 35%]
+tests/test_01_users.py::Test01UserAPI::test_07_03_users_username_patch_user PASSED [ 37%]
+tests/test_01_users.py::Test01UserAPI::test_07_05_users_username_put_user_restricted PASSED [ 39%]
+tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin PASSED [ 41%]
+tests/test_01_users.py::Test01UserAPI::test_08_02_users_username_delete_moderator PASSED [ 43%]
+tests/test_01_users.py::Test01UserAPI::test_08_03_users_username_delete_user PASSED [ 45%]
+tests/test_01_users.py::Test01UserAPI::test_08_04_users_username_delete_superuser PASSED [ 47%]
+tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions PASSED [ 49%]
+tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin PASSED [ 50%]
+tests/test_01_users.py::Test01UserAPI::test_11_01_users_me_patch_admin PASSED [ 52%]
+tests/test_01_users.py::Test01UserAPI::test_11_02_users_me_patch_user PASSED [ 54%]
+tests/test_02_category.py::Test02CategoryAPI::test_01_category_not_auth PASSED [ 56%]
+tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin PASSED [ 58%]
+tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin FAILED [ 60%]
+tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin PASSED [ 62%]
+tests/test_02_category.py::Test02CategoryAPI::test_05_category_create_user PASSED [ 64%]
+tests/test_02_category.py::Test02CategoryAPI::test_06_category_create_moderator PASSED [ 66%]
+tests/test_03_genre.py::Test03GenreAPI::test_01_genre_not_auth PASSED    [ 67%]
+tests/test_03_genre.py::Test03GenreAPI::test_02_genre PASSED             [ 69%]
+tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete FAILED     [ 71%]
+tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission PASSED [ 73%]
+tests/test_03_genre.py::Test03GenreAPI::test_05_genre_create_user PASSED [ 75%]
+tests/test_03_genre.py::Test03GenreAPI::test_06_genre_create_moderator PASSED [ 77%]
+tests/test_04_title.py::Test04TitleAPI::test_01_title_not_auth PASSED    [ 79%]
+tests/test_04_title.py::Test04TitleAPI::test_02_title_admin FAILED       [ 81%]
+tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail FAILED     [ 83%]
+tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission PASSED [ 84%]
+tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth PASSED [ 86%]
+tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin FAILED    [ 88%]
+tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail FAILED   [ 90%]
+tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission FAILED [ 92%]
+tests/test_06_comment.py::Test06CommentAPI::test_01_comment_not_auth FAILED [ 94%]
+tests/test_06_comment.py::Test06CommentAPI::test_02_comment FAILED       [ 96%]
+tests/test_06_comment.py::Test06CommentAPI::test_03_review_detail FAILED [ 98%]
+tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission FAILED [100%]
+
+================================== FAILURES ===================================
+_______________ Test02CategoryAPI.test_03_category_delete_admin _______________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x000002344441DE20>
+admin_client = <rest_framework.test.APIClient object at 0x00000234443E7940>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_category_delete_admin(self, admin_client):
+        create_categories(admin_client)
+        response = admin_client.delete('/api/v1/categories/books/')
+        assert response.status_code == 204, (
+            'Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` возвращаете статус 204'
+        )
+        response = admin_client.get('/api/v1/categories/')
+        test_data = response.json()['results']
+        assert len(test_data) == 1, (
+            'Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` удаляете категорию '
+        )
+        response = admin_client.get('/api/v1/categories/books/')
+>       assert response.status_code == 405, (
+            'Проверьте, что при GET запросе `/api/v1/categories/{slug}/` возвращаете статус 405'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/categories/{slug}/` возвращаете статус 405
+E       assert 404 == 405
+E         +404
+E         -405
+
+tests\test_02_category.py:105: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646226, 'jti': '48671eab751140be8439856da420dc16', 'user_id': 47}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646226, 'jti': '48671eab751140be8439856da420dc16', 'user_id': 47}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646226, 'jti': '48671eab751140be8439856da420dc16', 'user_id': 47}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646226, 'jti': '48671eab751140be8439856da420dc16', 'user_id': 47}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646226, 'jti': '48671eab751140be8439856da420dc16', 'user_id': 47}
+TestAdmin
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Not Found: /api/v1/categories/books/
+____________________ Test03GenreAPI.test_03_genres_delete _____________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x0000023444564490>
+admin_client = <rest_framework.test.APIClient object at 0x00000234444A60D0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_genres_delete(self, admin_client):
+        genres = create_genre(admin_client)
+        response = admin_client.delete(f'/api/v1/genres/{genres[0]["slug"]}/')
+        assert response.status_code == 204, (
+            'Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` возвращаете статус 204'
+        )
+        response = admin_client.get('/api/v1/genres/')
+        test_data = response.json()['results']
+        assert len(test_data) == len(genres) - 1, (
+            'Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` удаляете жанр '
+        )
+        response = admin_client.get(f'/api/v1/genres/{genres[0]["slug"]}/')
+>       assert response.status_code == 405, (
+            'Проверьте, что при GET запросе `/api/v1/genres/{slug}/` возвращаете статус 405'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/genres/{slug}/` возвращаете статус 405
+E       assert 404 == 405
+E         +404
+E         -405
+
+tests\test_03_genre.py:96: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646227, 'jti': '8baeeb5ea630417a8b4c27ea23d236f5', 'user_id': 54}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '8baeeb5ea630417a8b4c27ea23d236f5', 'user_id': 54}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '8baeeb5ea630417a8b4c27ea23d236f5', 'user_id': 54}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '8baeeb5ea630417a8b4c27ea23d236f5', 'user_id': 54}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '8baeeb5ea630417a8b4c27ea23d236f5', 'user_id': 54}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '8baeeb5ea630417a8b4c27ea23d236f5', 'user_id': 54}
+TestAdmin
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Not Found: /api/v1/genres/horror/
+_____________________ Test04TitleAPI.test_02_title_admin ______________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x00000234445B25B0>
+admin_client = <rest_framework.test.APIClient object at 0x00000234445AB250>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_title_admin(self, admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        data = {}
+        response = admin_client.post('/api/v1/titles/', data=data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` с не правильными данными возвращает статус 400'
+        )
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` с правильными данными возвращает статус 201'
+        )
+        data = {'name': 'Проект', 'year': 2020, 'genre': [genres[2]['slug']], 'category': categories[1]['slug'],
+                'description': 'Главная драма года'}
+        response = admin_client.post('/api/v1/titles/', data=data)
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` с правильными данными возвращает статус 201'
+        )
+        assert type(response.json().get('id')) == int, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` возвращаете данные созданного объекта. '
+            'Значение `id` нет или не является целым числом.'
+        )
+        response = admin_client.get('/api/v1/titles/')
+        assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращает статус 200'
+        )
+        data = response.json()
+        assert 'count' in data, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Не найден параметр `count`'
+        )
+        assert 'next' in data, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Не найден параметр `next`'
+        )
+        assert 'previous' in data, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Не найден параметр `previous`'
+        )
+        assert 'results' in data, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Не найден параметр `results`'
+        )
+        assert data['count'] == 2, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Значение параметра `count` не правильное'
+        )
+        assert type(data['results']) == list, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Тип параметра `results` должен быть список'
+        )
+        assert len(data['results']) == 2, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Значение параметра `results` не правильное'
+        )
+        if data['results'][0].get('name') == 'Поворот туда':
+            title = data['results'][0]
+        elif data['results'][1].get('name') == 'Поворот туда':
+            title = data['results'][1]
+        else:
+            assert False, (
+                'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+                'Значение параметра `results` неправильное, `name` не найдено или не сохранилось при POST запросе.'
+            )
+    
+>       assert title.get('rating') is None, (
+            'Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. '
+            'Значение параметра `results` неправильное, `rating` без отзывов должен быть равен `None`'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/titles/` возвращаете данные с пагинацией. Значение параметра `results` неправильное, `rating` без отзывов должен быть равен `None`
+E       assert 5 is None
+E        +  where 5 = <built-in method get of dict object at 0x0000023444588DC0>('rating')
+E        +    where <built-in method get of dict object at 0x0000023444588DC0> = {'category': {'name': 'Фильм', 'slug': 'films'}, 'description': 'Крутое пике', 'genre': [{'name': 'Ужасы', 'slug': 'horror'}, {'name': 'Комедия', 'slug': 'comedy'}], 'id': 1, ...}.get
+
+tests\test_04_title.py:87: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': '80c694e917d94ef4a9bcaf8e8a5c0a3a', 'user_id': 60}
+TestAdmin
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Bad Request: /api/v1/titles/
+____________________ Test04TitleAPI.test_03_titles_detail _____________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x00000234443C6AC0>
+client = <django.test.client.Client object at 0x0000023444564AF0>
+admin_client = <rest_framework.test.APIClient object at 0x0000023444564F10>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_titles_detail(self, client, admin_client):
+        titles, categories, genres = create_titles(admin_client)
+        response = client.get(f'/api/v1/titles/{titles[0]["id"]}/')
+        assert response.status_code != 404, (
+            'Страница `/api/v1/titles/{title_id}/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+>       assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/` '
+            'без токена авторизации возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/titles/{title_id}/` без токена авторизации возвращается статус 200
+E       assert 403 == 200
+E         +403
+E         -200
+
+tests\test_04_title.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646227, 'jti': 'b2e403e11b5b40a7b74719537c3ef5c8', 'user_id': 61}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': 'b2e403e11b5b40a7b74719537c3ef5c8', 'user_id': 61}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': 'b2e403e11b5b40a7b74719537c3ef5c8', 'user_id': 61}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': 'b2e403e11b5b40a7b74719537c3ef5c8', 'user_id': 61}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': 'b2e403e11b5b40a7b74719537c3ef5c8', 'user_id': 61}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': 'b2e403e11b5b40a7b74719537c3ef5c8', 'user_id': 61}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646227, 'jti': 'b2e403e11b5b40a7b74719537c3ef5c8', 'user_id': 61}
+TestAdmin
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/3/
+____________________ Test05ReviewAPI.test_02_review_admin _____________________
+
+self = <django.db.backends.utils.CursorWrapper object at 0x000002344460BA90>
+sql = 'INSERT INTO "reviews_review" ("author_id", "title_id", "text", "score", "pub_date") VALUES (%s, %s, %s, %s, %s)'
+params = [66, 9, 'Шляпа', 1, '2021-11-11 15:52:08.261498']
+ignored_wrapper_args = (False, {'connection': <django.db.backends.sqlite3.base.DatabaseWrapper object at 0x00000234435B44F0>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x000002344460BA90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+
+venv\lib\site-packages\django\db\backends\utils.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <django.db.backends.sqlite3.base.SQLiteCursorWrapper object at 0x00000234445F1D30>
+query = 'INSERT INTO "reviews_review" ("author_id", "title_id", "text", "score", "pub_date") VALUES (?, ?, ?, ?, ?)'
+params = [66, 9, 'Шляпа', 1, '2021-11-11 15:52:08.261498']
+
+    def execute(self, query, params=None):
+        if params is None:
+            return Database.Cursor.execute(self, query)
+        query = self.convert_query(query)
+>       return Database.Cursor.execute(self, query, params)
+E       sqlite3.IntegrityError: UNIQUE constraint failed: reviews_review.author_id, reviews_review.title_id
+
+venv\lib\site-packages\django\db\backends\sqlite3\base.py:383: IntegrityError
+
+The above exception was the direct cause of the following exception:
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x00000234445FB760>
+admin_client = <rest_framework.test.APIClient object at 0x00000234445A49D0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_review_admin(self, admin_client, admin):
+        titles, _, _ = create_titles(admin_client)
+        user, moderator = create_users_api(admin_client)
+        client_user = auth_client(user)
+        client_moderator = auth_client(moderator)
+        data = {}
+        response = admin_client.post(f'/api/v1/titles/{titles[0]["id"]}/reviews/', data=data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{title_id}/reviews/` '
+            'с не правильными данными возвращает статус 400'
+        )
+        self.create_review(admin_client, titles[0]["id"], 'qwerty', 5)
+        data = {
+            'text': 'Шляпа',
+            'score': 1
+        }
+>       response = admin_client.post(f'/api/v1/titles/{titles[0]["id"]}/reviews/', data=data)
+
+tests\test_05_review.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+venv\lib\site-packages\rest_framework\test.py:295: in post
+    response = super().post(
+venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:19: in create
+    self.perform_create(serializer)
+api_yamdb\api\views.py:23: in perform_create
+    serializer.save(author=self.request.user, title=get_object_or_404(Title, id=self.kwargs.get('title_id')))
+venv\lib\site-packages\rest_framework\serializers.py:205: in save
+    self.instance = self.create(validated_data)
+venv\lib\site-packages\rest_framework\serializers.py:939: in create
+    instance = ModelClass._default_manager.create(**validated_data)
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+venv\lib\site-packages\django\db\models\query.py:422: in create
+    obj.save(force_insert=True, using=self.db)
+venv\lib\site-packages\django\db\models\base.py:743: in save
+    self.save_base(using=using, force_insert=force_insert,
+venv\lib\site-packages\django\db\models\base.py:780: in save_base
+    updated = self._save_table(
+venv\lib\site-packages\django\db\models\base.py:873: in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+venv\lib\site-packages\django\db\models\base.py:910: in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+venv\lib\site-packages\django\db\models\query.py:1186: in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+venv\lib\site-packages\django\db\models\sql\compiler.py:1377: in execute_sql
+    cursor.execute(sql, params)
+venv\lib\site-packages\django\db\backends\utils.py:67: in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+venv\lib\site-packages\django\db\backends\utils.py:76: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+venv\lib\site-packages\django\db\backends\utils.py:84: in _execute
+    return self.cursor.execute(sql, params)
+venv\lib\site-packages\django\db\utils.py:89: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+venv\lib\site-packages\django\db\backends\utils.py:84: in _execute
+    return self.cursor.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <django.db.backends.sqlite3.base.SQLiteCursorWrapper object at 0x00000234445F1D30>
+query = 'INSERT INTO "reviews_review" ("author_id", "title_id", "text", "score", "pub_date") VALUES (?, ?, ?, ?, ?)'
+params = [66, 9, 'Шляпа', 1, '2021-11-11 15:52:08.261498']
+
+    def execute(self, query, params=None):
+        if params is None:
+            return Database.Cursor.execute(self, query)
+        query = self.convert_query(query)
+>       return Database.Cursor.execute(self, query, params)
+E       django.db.utils.IntegrityError: UNIQUE constraint failed: reviews_review.author_id, reviews_review.title_id
+
+venv\lib\site-packages\django\db\backends\sqlite3\base.py:383: IntegrityError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '2eec6e3221d84494b936b2aa18bb37be', 'user_id': 66}
+TestAdmin
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Bad Request: /api/v1/titles/9/reviews/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/9/reviews/
+Traceback (most recent call last):
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: reviews_review.author_id, reviews_review.title_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\GitDev\api_yamdb\api_yamdb\api\views.py", line 23, in perform_create
+    serializer.save(author=self.request.user, title=get_object_or_404(Title, id=self.kwargs.get('title_id')))
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\serializers.py", line 939, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\base.py", line 743, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\base.py", line 780, in save_base
+    updated = self._save_table(
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\base.py", line 873, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\base.py", line 910, in _do_insert
+    return manager._insert([self], fields=fields, return_id=update_pk,
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1377, in execute_sql
+    cursor.execute(sql, params)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\backends\utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: reviews_review.author_id, reviews_review.title_id
+____________________ Test05ReviewAPI.test_03_review_detail ____________________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x0000023445874E80>
+client = <django.test.client.Client object at 0x0000023445D9DFD0>
+admin_client = <rest_framework.test.APIClient object at 0x0000023445D9DDF0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_review_detail(self, client, admin_client, admin):
+        reviews, titles, user, moderator = create_reviews(admin_client, admin)
+        response = client.get(f'/api/v1/titles/{titles[0]["id"]}/reviews/{reviews[0]["id"]}/')
+        assert response.status_code != 404, (
+            'Страница `/api/v1/titles/{title_id}/reviews/{review_id}/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+>       assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/reviews/{review_id}/` '
+            'без токена авторизации возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/titles/{title_id}/reviews/{review_id}/` без токена авторизации возвращается статус 200
+E       assert 403 == 200
+E         +403
+E         -200
+
+tests\test_05_review.py:207: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '91ee4e668ab94dd484edb6c961abd8d0', 'user_id': 69}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '835dce36d86f4777813eda30ebd20658', 'user_id': 70}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '25d836195c7249178e1f66f3ff12946a', 'user_id': 71}
+TestModer
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/11/reviews/2/
+______________ Test05ReviewAPI.test_04_reviews_check_permission _______________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x0000023443C85370>
+client = <django.test.client.Client object at 0x0000023443CA8790>
+admin_client = <rest_framework.test.APIClient object at 0x0000023443C5A160>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_reviews_check_permission(self, client, admin_client, admin):
+        reviews, titles, user, moderator = create_reviews(admin_client, admin)
+        data = {'text': 'jdfk', 'score': 7}
+        response = client.post(f'/api/v1/titles/{titles[0]["id"]}/reviews/', data=data)
+>       assert response.status_code == 401, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{{title_id}}/reviews/` '
+            'без токена авторизации возвращается статус 401'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/titles/{{title_id}}/reviews/` без токена авторизации возвращается статус 401
+E       assert 403 == 401
+E         +403
+E         -401
+
+tests\test_05_review.py:322: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': 'eeeda8cbf0de497587226532a5b64f31', 'user_id': 72}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '4325b49351e54781996d7e662b5fea02', 'user_id': 73}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '36e3742f390a4f68b26b01dabd988f47', 'user_id': 74}
+TestModer
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/13/reviews/
+__________________ Test06CommentAPI.test_01_comment_not_auth __________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x0000023443BFFBE0>
+client = <django.test.client.Client object at 0x0000023443C62CA0>
+admin_client = <rest_framework.test.APIClient object at 0x0000023445C8BEE0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_01_comment_not_auth(self, client, admin_client, admin):
+        reviews, titles, _, _ = create_reviews(admin_client, admin)
+>       response = client.get(f'/api/v1/titles/{titles[0]["id"]}/reviews/{reviews[0]["id"]}/comments/')
+
+tests\test_06_comment.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+venv\lib\site-packages\django\test\client.py:535: in get
+    response = super().get(path, data=data, secure=secure, **extra)
+venv\lib\site-packages\django\test\client.py:345: in get
+    return self.generic('GET', path, secure=secure, **{
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:40: in list
+    page = self.paginate_queryset(queryset)
+venv\lib\site-packages\rest_framework\generics.py:171: in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+venv\lib\site-packages\rest_framework\pagination.py:204: in paginate_queryset
+    self.page = paginator.page(page_number)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <django.core.paginator.Paginator object at 0x00000234458BEFA0>
+number = 1
+
+    def page(self, number):
+        """Return a Page object for the given 1-based page number."""
+        number = self.validate_number(number)
+        bottom = (number - 1) * self.per_page
+        top = bottom + self.per_page
+        if top + self.orphans >= self.count:
+            top = self.count
+>       return self._get_page(self.object_list[bottom:top], number, self)
+E       TypeError: 'RelatedManager' object is not subscriptable
+
+venv\lib\site-packages\django\core\paginator.py:75: TypeError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646228, 'jti': '1e6f143e7a164de0b490626825987e98', 'user_id': 75}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'cc790283c395472ba7c2203ea111105f', 'user_id': 76}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '24a5bb35a43f4d1c9b41037b60460b28', 'user_id': 77}
+TestModer
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/15/reviews/8/comments/
+Traceback (most recent call last):
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\pagination.py", line 204, in paginate_queryset
+    self.page = paginator.page(page_number)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    return self._get_page(self.object_list[bottom:top], number, self)
+TypeError: 'RelatedManager' object is not subscriptable
+______________________ Test06CommentAPI.test_02_comment _______________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x000002344402DFD0>
+admin_client = <rest_framework.test.APIClient object at 0x0000023445888CA0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_comment(self, admin_client, admin):
+        reviews, titles, user, moderator = create_reviews(admin_client, admin)
+        client_user = auth_client(user)
+        client_moderator = auth_client(moderator)
+        data = {}
+        response = admin_client.post(
+            f'/api/v1/titles/{titles[0]["id"]}/reviews/{reviews[0]["id"]}/comments/', data=data
+        )
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{title_id}/reviews/{review_id}/comments/` '
+            'с не правильными данными возвращает статус 400'
+        )
+        self.create_comment(admin_client, titles[0]["id"], reviews[0]["id"], 'qwerty')
+        self.create_comment(client_user, titles[0]["id"], reviews[0]["id"], 'qwerty123')
+        self.create_comment(client_moderator, titles[0]["id"], reviews[0]["id"], 'qwerty321')
+    
+        self.create_comment(admin_client, titles[0]["id"], reviews[1]["id"], 'qwerty432')
+        self.create_comment(client_user, titles[0]["id"], reviews[1]["id"], 'qwerty534')
+        response = self.create_comment(client_moderator, titles[0]["id"], reviews[1]["id"], 'qwerty231')
+    
+        assert type(response.json().get('id')) == int, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{title_id}/reviews/{review_id}/comments/` '
+            'возвращаете данные созданного объекта. Значение `id` нет или не является целым числом.'
+        )
+    
+        data = {'text': 'kjdfg'}
+        response = admin_client.post('/api/v1/titles/999/reviews/999/comments/', data=data)
+        assert response.status_code == 404, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{title_id}/reviews/{review_id}/comments/` '
+            'с не существующим title_id или review_id возвращается статус 404.'
+        )
+        data = {'text': 'аывв'}
+        response = admin_client.post(
+            f'/api/v1/titles/{titles[0]["id"]}/reviews/{reviews[0]["id"]}/comments/', data=data
+        )
+        assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{title_id}/reviews/{review_id}/comments/` '
+            'на отзыв можно оставить несколько комментариев.'
+        )
+    
+>       response = admin_client.get(f'/api/v1/titles/{titles[0]["id"]}/reviews/{reviews[0]["id"]}/comments/')
+
+tests\test_06_comment.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+venv\lib\site-packages\rest_framework\test.py:288: in get
+    response = super().get(path, data=data, **extra)
+venv\lib\site-packages\rest_framework\test.py:205: in get
+    return self.generic('GET', path, **r)
+venv\lib\site-packages\rest_framework\test.py:233: in generic
+    return super().generic(
+venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+venv\lib\site-packages\rest_framework\mixins.py:40: in list
+    page = self.paginate_queryset(queryset)
+venv\lib\site-packages\rest_framework\generics.py:171: in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+venv\lib\site-packages\rest_framework\pagination.py:204: in paginate_queryset
+    self.page = paginator.page(page_number)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <django.core.paginator.Paginator object at 0x0000023443C40040>
+number = 1
+
+    def page(self, number):
+        """Return a Page object for the given 1-based page number."""
+        number = self.validate_number(number)
+        bottom = (number - 1) * self.per_page
+        top = bottom + self.per_page
+        if top + self.orphans >= self.count:
+            top = self.count
+>       return self._get_page(self.object_list[bottom:top], number, self)
+E       TypeError: 'RelatedManager' object is not subscriptable
+
+venv\lib\site-packages\django\core\paginator.py:75: TypeError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '82902e268e5c4ccfabce83b6da05d290', 'user_id': 79}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '909803f00b814e04897054e3790567b1', 'user_id': 80}
+TestModer
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '01dd0e7805f14042b0d84b90704146ef', 'user_id': 79}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '71a93c3c296945058ddcd082a5cc430d', 'user_id': 80}
+TestModer
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '01dd0e7805f14042b0d84b90704146ef', 'user_id': 79}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '71a93c3c296945058ddcd082a5cc430d', 'user_id': 80}
+TestModer
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dbed9b52c1d14e6dba8dbfb0f6990c15', 'user_id': 78}
+TestAdmin
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Bad Request: /api/v1/titles/17/reviews/11/comments/
+WARNING  django.request:log.py:222 Not Found: /api/v1/titles/999/reviews/999/comments/
+ERROR    django.request:log.py:222 Internal Server Error: /api/v1/titles/17/reviews/11/comments/
+Traceback (most recent call last):
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\pagination.py", line 204, in paginate_queryset
+    self.page = paginator.page(page_number)
+  File "d:\gitdev\api_yamdb\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    return self._get_page(self.object_list[bottom:top], number, self)
+TypeError: 'RelatedManager' object is not subscriptable
+___________________ Test06CommentAPI.test_03_review_detail ____________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x00000234447A91F0>
+client = <django.test.client.Client object at 0x00000234447A9550>
+admin_client = <rest_framework.test.APIClient object at 0x00000234459B80A0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_review_detail(self, client, admin_client, admin):
+        comments, reviews, titles, user, moderator = create_comments(admin_client, admin)
+        pre_url = f'/api/v1/titles/{titles[0]["id"]}/reviews/{reviews[0]["id"]}/comments/'
+        response = client.get(f'{pre_url}{comments[0]["id"]}/')
+        assert response.status_code != 404, (
+            'Страница `/api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/` '
+            'не найдена, проверьте этот адрес в *urls.py*'
+        )
+>       assert response.status_code == 200, (
+            'Проверьте, что при GET запросе `/api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/` '
+            'без токена авторизации возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при GET запросе `/api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/` без токена авторизации возвращается статус 200
+E       assert 403 == 200
+E         +403
+E         -200
+
+tests\test_06_comment.py:139: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '372e7ce620764b118a97f2b97b47c5bf', 'user_id': 82}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'dee64c58e7394524af59789e5d7fd0fd', 'user_id': 83}
+TestModer
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b2031a81f7c1423e81e3b1e8e13e59b8', 'user_id': 81}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '155c521914fe4cd482c2aaad991e0a9b', 'user_id': 82}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '2a6bd4ab90f148f7a8daae0b9683642d', 'user_id': 83}
+TestModer
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/19/reviews/14/comments/8/
+______________ Test06CommentAPI.test_04_comment_check_permission ______________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x00000234444ADEB0>
+client = <django.test.client.Client object at 0x00000234459CF190>
+admin_client = <rest_framework.test.APIClient object at 0x00000234443DEDC0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_comment_check_permission(self, client, admin_client, admin):
+        comments, reviews, titles, user, moderator = create_comments(admin_client, admin)
+        pre_url = f'/api/v1/titles/{titles[0]["id"]}/reviews/{reviews[0]["id"]}/comments/'
+        data = {'text': 'jdfk'}
+        response = client.post(f'{pre_url}', data=data)
+>       assert response.status_code == 401, (
+            'Проверьте, что при POST запросе `/api/v1/titles/{{title_id}}/reviews/{{review_id}}/comments/` '
+            'без токена авторизации возвращается статус 401'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/titles/{{title_id}}/reviews/{{review_id}}/comments/` без токена авторизации возвращается статус 401
+E       assert 403 == 401
+E         +403
+E         -401
+
+tests\test_06_comment.py:232: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '5cce89fffa2a45b8bfae3eaf6ce607e5', 'user_id': 85}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'd18b5aa18c1c4652871b0525f99d8b7d', 'user_id': 86}
+TestModer
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': 'b70fd7944bd744d497fbc8162762ac1d', 'user_id': 84}
+TestAdmin
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '17c67416b137420898fa4b26b1a081ab', 'user_id': 85}
+TestUser
+Аутентификация по токену прошла успешно
+{'token_type': 'access', 'exp': 1636646229, 'jti': '1a52518aa88f4c4388c8a95220bd358c', 'user_id': 86}
+TestModer
+Аутентификация по токену прошла успешно
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:222 Forbidden: /api/v1/titles/21/reviews/17/comments/
+-------------------------- Captured stderr teardown ---------------------------
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+============================== warnings summary ===============================
+tests/test_02_category.py::Test02CategoryAPI::test_01_category_not_auth
+tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin
+tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin
+  d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'reviews.models.Category'> QuerySet.
+    paginator = self.django_paginator_class(queryset, page_size)
+
+tests/test_03_genre.py::Test03GenreAPI::test_01_genre_not_auth
+tests/test_03_genre.py::Test03GenreAPI::test_02_genre
+tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete
+  d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'reviews.models.Genre'> QuerySet.
+    paginator = self.django_paginator_class(queryset, page_size)
+
+tests/test_04_title.py::Test04TitleAPI::test_01_title_not_auth
+tests/test_04_title.py::Test04TitleAPI::test_02_title_admin
+  d:\gitdev\api_yamdb\venv\lib\site-packages\rest_framework\pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'reviews.models.Title'> QuerySet.
+    paginator = self.django_paginator_class(queryset, page_size)
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete - Assert...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_02_title_admin - Assertio...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail - Assert...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin - djang...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail - Asse...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_01_comment_not_auth
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_02_comment - TypeErro...
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_03_review_detail - As...
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission
+================== 11 failed, 42 passed, 8 warnings in 6.92s ==================
