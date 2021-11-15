@@ -1,6 +1,5 @@
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
-from rest_framework.views import APIView
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 
@@ -16,7 +15,8 @@ class UserAdminViewset(viewsets.ModelViewSet):
     pagination_class = LimitOffsetPagination
     permission_classes = (IsAdminPermission,)
 
-    @action(detail=False, methods=['get', 'patch'], permission_classes=[IsOwnerPermission])
+    @action(detail=False, methods=['get', 'patch'],
+            permission_classes=[IsOwnerPermission])
     def me(self, request):
         user = request.user
         if request.method == 'GET':
