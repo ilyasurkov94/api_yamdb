@@ -75,6 +75,9 @@ class CategoryViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, slug=None):
         return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+    def partial_update(self, request, slug=None):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
 
 class TitleViewSet(viewsets.ModelViewSet):
     queryset = Title.objects.all()
