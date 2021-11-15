@@ -72,6 +72,9 @@ class CategoryViewSet(viewsets.ModelViewSet):
     search_fields = ('name',)
     permission_classes = (IsAdminPermission,)
 
+    def retrieve(self, request, slug=None):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
 
 class TitleViewSet(viewsets.ModelViewSet):
     queryset = Title.objects.all()
