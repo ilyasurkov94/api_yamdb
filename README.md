@@ -55,9 +55,13 @@ Model    -      Serializer       -  ModelViewSet
 ---
 Title    -  TitleBaseSerializer  -  TitleViewSet
             TitlePostSerializer 
+            
 Genre    -  GenreSerializer      -  GenreViewSet
+
 Category -  CategorySerializer   -  CategoryViewSet
+
 Review   -  ReviewSerializer     -  ReviewViewSet
+
 Comment  -  CommentSerializer    -  CommentViewSet
 
 ---
