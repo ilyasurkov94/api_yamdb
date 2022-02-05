@@ -53,8 +53,7 @@ SuperUser / Admin:
 
 Model    -      Serializer       -  ModelViewSet
 ---
-Title    -  TitleBaseSerializer  -  TitleViewSet
-            TitlePostSerializer 
+Title    -  TitleBaseSerializer / TitlePostSerializer -  TitleViewSet
             
 Genre    -  GenreSerializer      -  GenreViewSet
 
