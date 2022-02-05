@@ -51,7 +51,7 @@ SuperUser / Admin:
 
 Для API в проекте созданы сериализаторы и вью сеты для каждой модели:
 
-Model           Serializer          ModelViewSet
+Model    -      Serializer       -  ModelViewSet
 ---
 Title    -  TitleBaseSerializer  -  TitleViewSet
             TitlePostSerializer 
